@@ -3,8 +3,6 @@ from django.contrib.auth import authenticate, login, logout
 from .models import User
 from django.contrib import auth
 
-def home(request):
-    return render(request, 'home.html')
 
 def login(request):
     if request.method == "POST":
