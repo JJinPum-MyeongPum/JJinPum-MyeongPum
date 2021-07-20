@@ -75,3 +75,11 @@ def delete_comment(request, item_id, comment_id):
     my_comment=Comment.objects.get(pk=comment_id)
     my_comment.delete()
     return redirect('detail', item_id)
+
+def search(request):
+    products = Item.objects.all()
+    search_word = request.POST.get('search_word')
+    if search_word:
+        products = products.filter(title__icontains = search_word)
+        return render(request, 'productList.html', {'products':products, 'search_word':search_word})
+    return render(request, 'productList.html', {'products':products, 'search_word':search_word})
