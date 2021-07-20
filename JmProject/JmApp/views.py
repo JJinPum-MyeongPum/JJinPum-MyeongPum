@@ -46,3 +46,32 @@ def delete(request,id):
     delete_item=Item.objects.get(id=id)
     delete_item.delete()
     return redirect('home')
+
+
+# ----- comment -----
+
+def create_comment(request, item_id):
+    if request.method == 'POST':
+        comment=Comment()
+        comment.blog=get_object_or_404(Item, pk=item_id)
+        comment.writer=request.POST['writer']
+        comment.content=request.POST['content']
+        comment.save()
+        return redirect('detail', item_id)
+
+def update_comment(request, item_id, comment_id):
+    if request.method =='POST':
+        update_comment=get_object_or_404(Comment, pk=comment_id)
+        update_comment.writer=request.POST['writer']
+        update_comment.content=request.POST['content']
+        update_comment.save()
+        return redirect('detail', item_id)
+    else:
+        blog=get_object_or_404(Item, pk=item_id)
+        comment=get_object_or_404(Comment, pk=comment_id)
+        return render(request, 'edit_comment.html', {'blog':blog,'comment':comment})
+
+def delete_comment(request, item_id, comment_id):
+    my_comment=Comment.objects.get(pk=comment_id)
+    my_comment.delete()
+    return redirect('detail', item_id)
