@@ -14,7 +14,11 @@
     {% if user.is_authenticated %}
     {{user}}님
     <a href="{% url 'logout' %}" >Logout</a>
+    
+    {% if user.profileImg %}
     <p><img src="{{user.profileImg.url}}" style="width: 200px;"></p>
+    {% endif %}
+
     {% else %}
     <a href="{% url 'login' %}" >Login</a>
     <a href="{% url 'signup' %}">Sign Up</a>
