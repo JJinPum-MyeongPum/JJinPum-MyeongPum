@@ -5,6 +5,11 @@
     font-style: normal;
 }
 
-.title {
+h1 {
     font-family: 'S-CoreDream-4Regular';
+}
+
+.content{
+    display: flex;
+    justify-content: center;
 }
