@@ -24,7 +24,6 @@ def create(request):
         user_id=request.user.id
         user = User.objects.get(id=user_id)
         new_item.author=user
-        # db에 생성된 board 객체 저장
         new_item.save()
         return redirect('home')
     
@@ -76,6 +75,7 @@ def delete_comment(request, item_id, comment_id):
     my_comment.delete()
     return redirect('detail', item_id)
 
+# ----- search -----
 def search(request):
     products = Item.objects.all()
     search_word = request.POST.get('search_word')
