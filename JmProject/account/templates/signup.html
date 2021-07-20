@@ -2,13 +2,24 @@
 {% load static %}
 {% block title %} signup {% endblock %}
 {% block content %}
-<h1>회원가입</h1>
+<h1 style="text-align: center;">회원가입</h1>
 <form method="POST" action="{% url 'signup' %}" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="text" name="username" placeholder="아이디를 입력하세요" required>
-    <input type="password" name="password" placeholder="비밀번호를 입력하세요" required>
-    <input type="text" name="nickname" placeholder="별명를 입력하세요" required>
-    <input type="file" name="profileImg" accept="image/*" placeholder="프로필 이미지를 입력하세요" required>
-    <button>회원가입</button>
+    <div class="signup-div">
+        <br>
+        <p>아이디</p>
+        <input type="text" name="username" placeholder="아이디" required><br>
+        <br>
+        <p>비밀번호</p>
+        <input type="password" name="password" placeholder="비밀번호" required><br>
+        <br>
+        <p>별명</p>
+        <input type="text" name="nickname" placeholder="별명" required><br>
+        <br>
+        <label>프로필 이미지 선택</label><br>
+        <input type="file" name="profileImg" accept="image/*" required><br>
+        <br>
+        <button>회원가입</button>
+    </div>
 </form>
 {% endblock %}
