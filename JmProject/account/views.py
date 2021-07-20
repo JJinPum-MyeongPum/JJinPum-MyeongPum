@@ -4,7 +4,7 @@ from .models import User
 from django.contrib import auth
 
 
-def login(request):
+def user_login(request):
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
@@ -14,11 +14,11 @@ def login(request):
             login(request, user)
             return redirect('home')
         else:
-            return render(request, 'login.html')
+            return render(request, 'login.html', {'error': '아이디와 비밀번호가 일치하지 않습니다.'})
     else:
         return render(request, 'login.html')
         
-def logout(request):
+def user_logout(request):
     logout(request)
     return redirect('home')
 
