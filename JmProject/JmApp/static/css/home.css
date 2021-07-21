@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     margin-top: 3%;
-    font-size: 25px;
+    font-size: 28px;
 }
 .text {
     font-family: 'S-CoreDream-9Black';
@@ -46,13 +46,11 @@ body{
     font-size: 20px;
     margin-top: 5%;
 }
-
 #bt1, #bt2 {
     border: 0;
     outline: 0;
     border-radius: 8px;
 }
-
 #bt2{
-    margin-left: 2%;
+    margin-left: 4%;
 }
