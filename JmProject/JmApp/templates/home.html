@@ -5,22 +5,27 @@
 
 {% block content %}
 
-<div class="title">
-    <span>우리집 숨겨진 보물의</span><br>
-    <span>가치는 얼마일까요?</span>
-    <span>쓸모없다고 생각한 물건!</span><br>
-    <span>지금 바로 가치를 확인해보세요.</span>
-</div>
-<div>
-    <p><img src="" alt="서비스이미지" width="500" height="400"></p> 
-</div>
-<div>
-    <button>찐품명품 보기</button>
-    <button>가치 측정하기</button>
-</div>
+<content>
+    <div class="content">
+        <div class="text">
+            <span>우리집 숨겨진 보물의</span><br>
+            <span>가치는 얼마일까요?</span><br>
+            <span id="text2">쓸모없다고 생각한 물건!</span>
+            <span id="text2">지금 바로 가치를 확인해보세요.</span>
+            <div class="buttons">
+                <button id="bt1">찐품명품 보기</button>
+                <button id="bt2">가치 측정하기</button>
+            </div>
+        </div>
 
-<hr size="3px">
+        <div  id="service_image">
+            <p><img src="" alt="서비스이미지" width="500" height="400"></p> 
+        </div>
+    </div>
 
-<h2>실시간 인기 보물</h2>
+    <hr size="3px">
+
+    <h2 id="popular">실시간 인기 보물</h2>
+</content>  
 
 {% endblock %}
