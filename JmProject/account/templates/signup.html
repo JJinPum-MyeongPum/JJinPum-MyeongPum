@@ -3,24 +3,59 @@
 {% block title %} signup {% endblock %}
 {% block link %} {% static 'css/signup.css' %}{% endblock %}
 {% block content %}
+
 <h1 class="signup-title">회원가입</h1>
+
+
 <form method="POST" action="{% url 'signup' %}" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="signup-div">
-        <br>
-        <p>아이디</p>
-        <input class="signup" type="text" name="username" placeholder="아이디" required><br>
-        <br>
-        <p>비밀번호</p>
-        <input class="signup" type="password" name="password" placeholder="비밀번호" required><br>
-        <br>
-        <p>별명</p>
-        <input class="signup" type="text" name="nickname" placeholder="별명" required><br>
-        <br>
-        <label>프로필 이미지 선택</label><br>
-        <p><input class="signup" type="file" name="profileImg" accept="image/*" required></p><br>
-        <br>
-        <button>회원가입</button>
-    </div>
+    <!-- wrapper -->
+    <div id="wrapper">
+
+        <!-- content-->
+        <div id="content">
+
+            <!-- ID -->
+            <div>
+                <h3 class="join_title">
+                    <label for="id">아이디</label>
+                </h3>
+                <span class="box int_id">
+                    <input class="int" type="text" name="username" placeholder="아이디" maxlength="20" required><br>
+                </span>
+            </div>
+
+            <!-- PW -->
+            <div>
+                <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
+                <span class="box int_pass">
+                    <input class="int" type="password" name="password" placeholder="비밀번호" maxlength="20" required><br>
+                </span>
+            </div>
+
+            <!-- NAME -->
+            <div>
+                <h3 class="join_title"><label for="nickname">별명</label></h3>
+                <span class="box int_name">
+                    <input class="int" type="text" name="nickname" placeholder="별명" maxlength="20" required><br>
+                </span>
+            </div>
+
+            <!-- profileImg -->
+            <div>
+                <h3 class="join_title"><label for="nickname">프로필이미지</label></h3>
+                <span class="box int_img">
+                    <input class="int" type="file" name="profileImg" accept="image/*"  maxlength="20" required>
+                </span>
+            </div>
+
+            <!-- JOIN BTN-->
+            <div class="btn_area">
+                <button id="btnJoin">
+                    가입하기
+                </button>
+            </div>                
+        </div> 
+    </div> 
 </form>
 {% endblock %}
