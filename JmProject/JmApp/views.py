@@ -2,15 +2,18 @@ from django.shortcuts import render
 from account.models import User
 from django.utils import timezone
 from JmApp.models import Item
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 
 def home(request):
-    items=Item.objects.all()
+    items=Item.objects.all().order_by('-clickCount')
     return render(request, 'home.html', {'items':items})
 
 def detail(request, id):
     item=get_object_or_404(Item, pk=id)
+    item.clickCount+=1
+    item.save()
     return render(request, 'detail.html', {'item':item})
 
 def create(request):
@@ -78,8 +81,11 @@ def delete_comment(request, item_id, comment_id):
 # ----- search -----
 def search(request):
     products = Item.objects.all()
+    paginator = Paginator(products, 3)
+    page_number = request.GET.get('page')
+    page = paginator.get_page(page_number)
     search_word = request.POST.get('search_word')
     if search_word:
         products = products.filter(title__icontains = search_word)
         return render(request, 'productList.html', {'products':products, 'search_word':search_word})
-    return render(request, 'productList.html', {'products':products, 'search_word':search_word})
+    return render(request, 'productList.html', {'products':page, 'search_word':search_word})
