@@ -26,7 +26,7 @@
         <li><a href="{% url 'home' %}" class="nav-link px-2 link-dark">Home</a></li>
         <li><a href="#" class="nav-link px-2 link-dark">찐품명품리스트</a></li>
         {% if user.is_authenticated %}
-        <li><a href="#" class="nav-link px-2 link-dark">보물등록</a></li>
+        <li><a href="{% url 'create' %}" class="nav-link px-2 link-dark">보물등록</a></li>
         {% endif %}
         </ul>
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
