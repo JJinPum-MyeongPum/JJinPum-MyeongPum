@@ -3,7 +3,7 @@
 {% block title %} signup {% endblock %}
 {% block link %} {% static 'css/signup.css' %}{% endblock %}
 {% block content %}
-<h1 style="text-align: center;">회원가입</h1>
+<h1 class="signup-title">회원가입</h1>
 <form method="POST" action="{% url 'signup' %}" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="signup-div">
@@ -18,7 +18,7 @@
         <input class="signup" type="text" name="nickname" placeholder="별명" required><br>
         <br>
         <label>프로필 이미지 선택</label><br>
-        <input class="signup" type="file" name="profileImg" accept="image/*" required><br>
+        <p><input class="signup" type="file" name="profileImg" accept="image/*" required></p><br>
         <br>
         <button>회원가입</button>
     </div>
