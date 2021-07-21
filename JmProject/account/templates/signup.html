@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} signup {% endblock %}
+{% block link %} {% static 'css/signup.css' %}{% endblock %}
 {% block content %}
 <h1 style="text-align: center;">회원가입</h1>
 <form method="POST" action="{% url 'signup' %}" enctype="multipart/form-data">
