@@ -25,10 +25,12 @@
         <img src= "img/logo.png" width="145" height="35">
         <li><a href="{% url 'home' %}" class="nav-link px-2 link-dark">Home</a></li>
         <li><a href="#" class="nav-link px-2 link-dark">찐품명품리스트</a></li>
+        {% if user.is_authenticated %}
         <li><a href="#" class="nav-link px-2 link-dark">보물등록</a></li>
+        {% endif %}
         </ul>
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        <input type="search" class="form-control" placeholder="보물을 검색해보세요!" aria-label="Search">
         </form>
         <div class="dropdown text-end">
         <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
