@@ -23,4 +23,19 @@
             자세히 보기
         </a><br>
     {% endfor %}
+
+    
+    {% if products.has_previous %}
+    <a href='?page={{products.previous_page_number}}'><</a>
+    {% endif %}
+
+    {% if search_word == NULL%}
+    <span>{{products.number}}</span>
+    <span>/</span>
+    <span>{{products.paginator.num_pages}}</span>
+    {% endif %}
+    
+    {% if products.has_next %}
+    <a href='?page={{products.next_page_number}}'>></a>
+    {% endif %}
 {% endblock %}

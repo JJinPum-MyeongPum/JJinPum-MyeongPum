@@ -6,6 +6,11 @@
 <h1> 디테일 페이지 화면입니다 </h1>
 
 <!-- 등록 상품 정보 -->
-
+물품이름 : {{item.title}}<br>
+게시자 : {{item.author}}<br>
+게시시간 : {{item.pub_date}}<br>
+이미지 : <img src="{{item.image.url}}" width="200" height="200" ><br>
+가치 : {{item.value}}
+검색횟수 : {{item.clickCount}}
 <!-- 댓글 달기 / 댓글 보기 -->
 {% endblock %}

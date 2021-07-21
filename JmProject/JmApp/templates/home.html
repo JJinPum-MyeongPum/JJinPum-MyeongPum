@@ -18,7 +18,15 @@
     <button>찐품명품 보기</button>
     <button>가치 측정하기</button>
 </div>
-
+클릭 순으로 나열<br>
+{% for item in items %}
+    제목 : {{item.title}}<br>
+    클릭 수 : {{item.clickCount}}<br>
+    <img src="{{item.image.url}}" width="200" height="200" ><br>
+    <a href="{% url 'detail' item.id %}">
+        자세히 보기
+    </a><br>
+{% endfor %}
 <hr size="3px">
 
 <h2>실시간 인기 보물</h2>
