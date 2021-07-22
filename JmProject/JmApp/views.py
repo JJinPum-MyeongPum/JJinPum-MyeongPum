@@ -89,3 +89,11 @@ def search(request):
         products = products.filter(title__icontains = search_word)
         return render(request, 'productList.html', {'products':products, 'search_word':search_word})
     return render(request, 'productList.html', {'products':page, 'search_word':search_word})
+
+def mypage(request, username):
+    user = User.objects.filter(username=username)
+    products = Item.objects.filter(author=user[0])
+    if products is None:
+        productsCount = 0
+    else: productsCount = len(products)
+    return render(request, 'myPage.html', {'products':products, 'users':user, 'productsCount':productsCount})
