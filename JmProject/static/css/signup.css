@@ -21,7 +21,6 @@ html {
 body {
     margin: 0;
     height: 100%;
-    background: #f5f6f7;
     font-family: Dotum,'돋움',Helvetica,sans-serif;
 }
 #logo {
@@ -103,7 +102,7 @@ input {
     border: 0;
     cursor: pointer;
     color: rgb(0, 0, 0);
-    background-color: #ffffff;
+    background-color: hsl(202, 100%, 96%);
     font-size: 20px;
     font-weight: 400;
     border-radius: 20px;
