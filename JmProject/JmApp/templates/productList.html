@@ -1,20 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} Product List {% endblock %}
+{% block link %} {% static 'css/list.css' %}{% endblock %}
+
 {% block content %}
 
-<h1> 제품 리스트 페이지입니다. </h1>
-<form action="{% url 'search' %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="search_word" placeholder="검색어를 입력하세요">
-    <button>검색</button>
-</form>
-{% if search_word %}
-<!-- 검색어가 있을 때 -->
-<h3>{{search_word}}에 대한 검색 결과입니다.</h3>
-{% else %}
-<h3>검색어를 입력하세요.</h3>
-{% endif%}
+    <h1 class="title"> 측정 중인 찐품명품 </h1>
+    <form action="{% url 'search' %}" method="post">
+        {% csrf_token %}
+        <div class="search">
+        <span class="search_title">가치가 궁금한 찐품명품을 검색해주세요!</span><br>
+        <input  id="search_item" type="text" name="search_word" placeholder="검색어를 입력하세요">
+        <button id="search_button" >검색</button>
+        </div>
+    </form>
+
+    <hr size="3px">
+
+    {% if search_word %}
+        <!-- 검색어가 있을 때 -->
+        <span class="search_result"><strong>{{search_word}}</strong>에 대한 검색 결과입니다.</span>
+    {% else %}
+        <h3>검색어를 입력하세요.</h3>
+    {% endif%}
 
     {% for product in products %}
         {{product.title}}<br>
