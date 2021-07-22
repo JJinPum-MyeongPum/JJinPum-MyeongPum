@@ -5,5 +5,27 @@
 {% block content %}
 
 <h2 class="signup-title">당신의 찐품명품을 자랑해주세요!</h2>
-
+<br>
+<form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+{% csrf_token %}
+    <div class="signup">
+        <div>
+            <p>물건명 : &nbsp;<input class="int" type="text" name="title" style="width: 300px;" placeholder="우리집 보물의 이름을 작성해주세요!" required></p>
+        </div>
+        <br>
+        <div class="body-div">
+            <div class="body">
+            <p>설명 : &nbsp;</p>
+                <textarea name="body" cols="36" rows="6" placeholder="당신의 보물을 소개 해주세요!"></textarea>
+            </div>
+        </div>
+        <br>
+        <div>
+            <p>물건 이미지 : <input class="int" type="file" name="image" accept="image/*" required></p>
+        </div>
+    </div>
+    <div class="btn_area">
+        <button class="btnpost">등록하기</button>
+    </div>
+</form>
 {% endblock %}
