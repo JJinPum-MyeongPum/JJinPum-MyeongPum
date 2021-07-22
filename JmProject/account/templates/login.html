@@ -4,7 +4,7 @@
 {% block link %} {% static 'css/login.css' %}{% endblock %}
 {% block content %}
 
-<form method="POST" action="{% url 'login' %}">
+<form method="POST" action="{% url 'login' %}" enctype="multipart/form-data">
     {% csrf_token %}
     <h1 class="title">로그인</h1>
 
