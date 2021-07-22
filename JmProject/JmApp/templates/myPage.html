@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} My Page {% endblock %}
+{% block content %}
+<h1>{{user.username}}님의 정보입니다.</h1>
+아이디 : {{user.username}}<br>
+별명 : {{user.nickname}}<br>
+지금까지 올린 상품 수 : {{productsCount}}<br>
+이미지 : <img src="{{user.profileImg.url}}" width="200">
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="search_word" placeholder="검색어를 입력하세요">
+    <button>검색</button>
+</form>
+{% if search_word %}
+<!-- 검색어가 있을 때 -->
+<h3>{{search_word}}에 대한 검색 결과입니다.</h3>
+{% else %}
+<h3>검색어를 입력하세요.</h3>
+{% endif%}
+
+{% if products != Null %}
+    {% for product in products %}
+        {{product.title}}<br>
+        {{product.author}}<br>
+        <img src="{{product.image.url}}" width="200" height="200" ><br>
+        <a href="{% url 'detail' product.id %}">
+            자세히 보기
+        </a><br>
+    {% endfor %}
+{% else %}
+{{ids}}에 대한 기록이 없습니다.
+{% endif %}
+
+    
+    <!-- {% if products.has_previous %}
+    <a href='?page={{products.previous_page_number}}'><</a>
+    {% endif %}
+
+    {% if search_word == NULL%}
+    <span>{{products.number}}</span>
+    <span>/</span>
+    <span>{{products.paginator.num_pages}}</span>
+    {% endif %}
+    
+    {% if products.has_next %}
+    <a href='?page={{products.next_page_number}}'>></a>
+    {% endif %} -->
+
+{% endblock %}
