@@ -22,7 +22,7 @@
         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
         </a>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <img src="/JmProject/static/img/logo.png" alt="사진X" width="145" height="35">
+        <li><img src="{% static 'img/logo.png' %}" alt="x" width="122" height="30"></li>
         <li><a href="{% url 'home' %}" class="nav-link px-2 link-dark">Home</a></li>
         <li><a href="{% url 'search' %}" class="nav-link px-2 link-dark">찐품명품리스트</a></li>
         {% if user.is_authenticated %}
