@@ -80,11 +80,21 @@ def delete_comment(request, item_id, comment_id):
 
 # ----- search -----
 def search(request):
-    products = Item.objects.all()
+    orderValue = request.POST.getlist('value[]')
+    products=Item.objects.all()
+    print(orderValue)
+    if '11' in orderValue:
+        products=Item.objects.all().order_by('pub_date')
+    if '12' in orderValue:
+        products=Item.objects.all().order_by('title')
+    if '13' in orderValue:
+        products=Item.objects.all().order_by('-clickCount')
     paginator = Paginator(products, 3)
+    
     page_number = request.GET.get('page')
     page = paginator.get_page(page_number)
     search_word = request.POST.get('search_word')
+    
     if search_word:
         products = products.filter(title__icontains = search_word)
         return render(request, 'productList.html', {'products':products, 'search_word':search_word})

@@ -4,7 +4,17 @@
 {% block content %}
 
 <h1> 제품 리스트 페이지입니다. </h1>
+<h2>체크 박스</h2>
 <form action="{% url 'search' %}" method="post">
+    <input type="checkbox" name="value[]" id="orderTime" value="11">
+        <label for="orderTime">등록 순으로 보기</label>
+    </input><br>
+    <input type="checkbox" name="value[]" id="orderName" value="12">
+        <label for="orderName">이름 순으로 보기</label>
+    </input><br>
+    <input type="checkbox" name="value[]" id="orderCount" value="13">
+        <label for="orderCount">인기 순으로 보기</label>
+    </input><br>
     {% csrf_token %}
     <input type="text" name="search_word" placeholder="검색어를 입력하세요">
     <button>검색</button>
@@ -18,6 +28,7 @@
 
     {% for product in products %}
         {{product.title}}<br>
+        {{product.clickCount}}회 클릭<br>
         <img src="{{product.image.url}}" width="200" height="200" ><br>
         <a href="{% url 'detail' product.id %}">
             자세히 보기
