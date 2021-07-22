@@ -66,3 +66,7 @@ input:focus{
 #signup:link {
     color: #000;
 }
+
+#signup:visited{
+    color: #000;
+}
