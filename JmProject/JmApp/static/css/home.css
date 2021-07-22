@@ -43,14 +43,28 @@ body{
 /* button css */
 .buttons{
     font-family: 'S-CoreDream-4Regular';
-    font-size: 20px;
+    font-size: 22px;
     margin-top: 5%;
+    height: 60px;
 }
+
 #bt1, #bt2 {
+    background-color: #e4e4e4;
     border: 0;
     outline: 0;
     border-radius: 8px;
+    height: 50px;
+    text-decoration: none;
 }
+
 #bt2{
-    margin-left: 4%;
+    margin-left: 2%;
+}
+
+#bt1:link, #bt2:link{
+    color: #000;
+}
+
+#bt1:visited, #bt2:visited{
+    color: #000;
 }
