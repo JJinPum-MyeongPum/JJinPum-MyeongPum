@@ -33,12 +33,13 @@
 <hr>
 <Br>
 <!-- 댓글 달기 / 댓글 보기 -->
-    <h3>댓글</h3>
+    <h5 style="text-align: center;">댓글</h5>
+    <br>
     {% if user.is_authenticated %}
-        <form action="{% url 'create_comment' item.id %}" method="POST">
+        <form action="{% url 'create_comment' item.id %}" method="POST" style="text-align: center;">
             {% csrf_token %}
-            <p>댓글 작성<textarea name="content" cols="20" row="10"></textarea></p>
-            <button type="submit">작성</button>
+            <textarea name="content" cols="100" row="30"></textarea>
+            <button type="submit" style="border-radius: 20px; background-color: hsl(202, 100%, 96%);">작성</button>
         </form>
     {% endif %}
     {% for comment in item.comment_set.all %}
