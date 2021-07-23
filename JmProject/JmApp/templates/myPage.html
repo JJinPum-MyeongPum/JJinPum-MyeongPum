@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} My Page {% endblock %}
+{% block link %} {% static 'css/mypage.css' %}{% endblock %}
 {% block content %}
-<h1>{{user.username}}님의 정보입니다.</h1>
+
+<h1><strong>{{user.username}}</strong>님의 정보입니다.</h1>
 아이디 : {{user.username}}<br>
 별명 : {{user.nickname}}<br>
 지금까지 올린 상품 수 : {{productsCount}}<br>
