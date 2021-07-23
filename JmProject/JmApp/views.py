@@ -52,20 +52,22 @@ def delete(request,id):
 
 # ----- comment -----
 
-def create_comment(request, item_id):
+def create_comment(request, item_id, username):
+    user = User.objects.filter(username=username)
     if request.method == 'POST':
         comment=Comment()
         comment.item=get_object_or_404(Item, pk=item_id)
-        comment.writer=request.POST['writer']
+        comment.writer=user[0].username
         comment.content=request.POST['content']
         comment.save()
         return redirect('detail', item_id)
 
-def update_comment(request, item_id, comment_id):
+def update_comment(request, item_id, comment_id, user):
     if request.method =='POST':
         update_comment=get_object_or_404(Comment, pk=comment_id)
-        update_comment.writer=request.POST['writer']
+        update_comment.writer=user
         update_comment.content=request.POST['content']
+        update_comment.itemForeign=item_id
         update_comment.save()
         return redirect('detail', item_id)
     else:

@@ -9,6 +9,6 @@ urlpatterns = [
     path('delete/<str:id>', views.delete, name='delete'),
     path('search/', views.search, name='search'),
     path('mypage/<str:username>', views.mypage, name='mypage'), 
-        path('create_comment/<str:item_id>', views.create_comment, name="create_comment"),
+    path('create_comment/<str:item_id>/<str:username>', views.create_comment, name="create_comment"),
     path('delete_comment/<str:item_id>/<str:comment_id>', views.delete_comment, name="delete_comment"),
 ]
