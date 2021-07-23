@@ -29,10 +29,6 @@
         <li><a href="{% url 'create' %}" class="nav-link px-2 link-dark">보물등록</a></li>
         {% endif %}
         </ul>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="{% url 'search' %}" method="POST">
-          {% csrf_token %}
-          <input type="search" name="search_word" class="form-control" placeholder="보물을 검색해보세요!" aria-label="Search">
-        </form>
         <div class="dropdown text-end">
         <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             {% if user.profileImg %}

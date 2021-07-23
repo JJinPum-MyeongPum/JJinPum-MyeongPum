@@ -11,50 +11,38 @@
     font-weight: normal;
     font-style: normal;
 }
-#popular{
+*{
     font-family: 'S-CoreDream-4Regular';
-    display: flex;
-    justify-content: center;
-    margin-top: 3%;
-    font-size: 28px;
 }
-.text {
+.body{
+    background-color: hsl(202, 100%, 96%);
+    padding-bottom: 10%;
+}
+
+.title{
     font-family: 'S-CoreDream-9Black';
     font-size: 30px;
+    display: block;
+    padding-top: 18%;
+    padding-left: 18%;
+    margin-bottom: 1%;
 }
 #text2 {
-    font-family: 'S-CoreDream-4Regular';
-    margin-top: 5%;
+    display: block;
     font-size: 17px;
+    padding-left: 18%;
 }
-#service_image{
-    margin-left: 40%;
-}
-.content{
-    display: flex;
-    flex-direction: row;
-    margin: 20%;
-}
-body{
-    width: 100%;
-    height: 100%;
-}
-
-/* button css */
-.buttons{
-    font-family: 'S-CoreDream-4Regular';
-    font-size: 22px;
-    margin-top: 5%;
-    height: 60px;
-}
-
 #bt1, #bt2 {
-    background-color: #e4e4e4;
-    border: 0;
-    outline: 0;
-    border-radius: 8px;
-    height: 50px;
+    font-size: 18px;
+    background-color: #fff;
     text-decoration: none;
+    border-radius: 12px;
+    padding: 1rem 1rem;
+}
+#bt1{ 
+    margin-left: 17%;
+    width: 100px;
+    height: 50px;
 }
 
 #bt2{
@@ -67,4 +55,22 @@ body{
 
 #bt1:visited, #bt2:visited{
     color: #000;
+}
+
+/* image css */
+#image{
+    position: absolute;
+    display: block;
+    right: 130px;
+    top: 150px;
+    border-radius: 25%;
+}
+
+/* 인기 보물 css */
+#popular{
+    font-family: 'S-CoreDream-4Regular';
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    font-size: 28px;
 }
