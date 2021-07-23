@@ -95,6 +95,11 @@ input:focus{
 }
 
 /* checkbox css */
+label[for="orderTime"], [for="orderName"], [for="orderCount"]{
+    position: relative;
+    top: -5.5px;
+}
+
 .order{
     display: flex;
     justify-content: center;
