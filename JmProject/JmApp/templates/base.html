@@ -15,14 +15,14 @@
     <title> {% block title%} {% endblock %} </title>
 </head>
 <body>
-     <header class="p-3 mb-3 border-bottom">
+     <header class="p-3 border-bottom">
         <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
         </a>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><img src="{% static 'img/logo.png' %}" alt="x" width="122" height="30"></li>
+        <li><a href="{% url 'home' %}"><img style="padding-top: 3px;" src="{% static 'img/logo.png' %}" alt="x" width="122" height="30"></a></li>
         <li><a href="{% url 'home' %}" class="nav-link px-2 link-dark">Home</a></li>
         <li><a href="{% url 'search' %}" class="nav-link px-2 link-dark">찐품명품리스트</a></li>
         {% if user.is_authenticated %}
