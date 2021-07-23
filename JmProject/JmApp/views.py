@@ -28,7 +28,7 @@ def create(request):
         user = User.objects.get(id=user_id)
         new_item.author=user
         new_item.save()
-        return redirect('home')
+        return redirect('search')
     
     else:
         return render(request, 'new.html')

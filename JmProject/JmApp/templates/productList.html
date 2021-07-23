@@ -20,13 +20,13 @@
     <div class="order">
         <input type="checkbox" name="value[]" id="orderTime" value="11">
         <label for="orderTime">등록 순 정렬</label>
-        </input>
+        
         <input type="checkbox" name="value[]" id="orderName" value="12">
         <label for="orderName">이름 순 정렬</label>
-        </input>
+        
         <input type="checkbox" name="value[]" id="orderCount" value="13">
             <label for="orderCount">인기 순 정렬</label>
-        </input>
+        
     </div>
 
     {% if search_word %}
@@ -36,32 +36,38 @@
         <!-- <span>검색어를 입력하세요.</span> -->
     {% endif%}
 
-    {% for product in products %}
-    <div class="content">
-        <div class="list_body">
-            <span id="list_title"><strong>{{product.title}}</strong></span>
-            <span id="count">조회 수 : {{product.clickCount}}회</span><br>
-            <img src="{{product.image.url}}" width="200" height="200" ><br>
-            <a href="{% url 'detail' product.id %}" id="list_detail">
-                자세히 보기
-            </a><br>
+    <div class="list_wrap">
+        <ul>
+        {% for product in products %}
+          <div class="item">
+            <a href="{% url 'detail' product.id %}">
+            <p><img src="{{ product.image.url }}" alt="없음" width="200"></p>
+            <a><strong>{{product.title}}</strong><br>
+            <p>{{product.pub_date}}<br>
+            조회 : {{product.clickCount}}회</p>
+            </a>
+          </div>
+          {% endfor %}
+        </ul>
+
+        <div class="page">
+        {% if products.has_previous %}
+            <a href="?page={{products.previous_page_number}"><</a>
+        {% endif %}
+          {% if products.has_next %}
+          <a href="#"><</a>
+          {% endif %}
+          
+          <span>{{products.number}}</span>
+          <span>of</span>
+          <span>{{products.paginator.num_pages}}</span>
+          
+          {% if products.has_previous %}
+          <a href="#">></a>
+          {% endif %}
+          {% if products.has_next %}
+          <a href="?page={{ products.next_page_number}}">></a>
+          {% endif %}
+          </div>
         </div>
-    </div>
-
-    {% endfor %}
-
-    
-    {% if products.has_previous %}
-    <a href='?page={{products.previous_page_number}}'><</a>
-    {% endif %}
-
-    {% if search_word == NULL%}
-    <span>{{products.number}}</span>
-    <span>/</span>
-    <span>{{products.paginator.num_pages}}</span>
-    {% endif %}
-    
-    {% if products.has_next %}
-    <a href='?page={{products.next_page_number}}'>></a>
-    {% endif %}
 {% endblock %}
