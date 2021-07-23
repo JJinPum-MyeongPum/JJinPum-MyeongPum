@@ -36,7 +36,7 @@
     <h5 style="text-align: center;">댓글</h5>
     <br>
     {% if user.is_authenticated %}
-        <form action="{% url 'create_comment' item.id %}" method="POST" style="text-align: center;">
+        <form action="{% url 'create_comment' item.id user.username %}" method="POST" style="text-align: center;">
             {% csrf_token %}
             <textarea name="content" cols="100" row="30"></textarea>
             <button type="submit" style="border-radius: 20px; background-color: hsl(202, 100%, 96%);">작성</button>

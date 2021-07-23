@@ -15,5 +15,5 @@ class Item(models.Model):
 
 class Comment(models.Model):
     content = models.TextField(default='')
-    writer = models.ForeignKey('account.User', on_delete=models.CASCADE)
-    itemForeign = models.ForeignKey(Item, on_delete=models.CASCADE)
+    writer = models.CharField(max_length=50, default='')
+    itemForeign = models.ForeignKey(Item, on_delete=models.CASCADE, null=True)
