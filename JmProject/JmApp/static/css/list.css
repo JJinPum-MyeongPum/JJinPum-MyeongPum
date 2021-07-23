@@ -4,6 +4,14 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'S-CoreDream-9Black';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 *{
     font-family: 'S-CoreDream-4Regular';
 }
@@ -100,6 +108,10 @@ input:focus{
 
 ul, li {
     list-style: none;
+}
+
+.item{
+    margin-top: 3%;
 }
 
 .list_wrap {
