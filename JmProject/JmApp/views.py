@@ -56,7 +56,7 @@ def create_comment(request, item_id, username):
     user = User.objects.filter(username=username)
     if request.method == 'POST':
         comment=Comment()
-        comment.item=get_object_or_404(Item, pk=item_id)
+        comment.itemForeign=get_object_or_404(Item, pk=item_id)
         comment.writer=user[0].username
         comment.content=request.POST['content']
         comment.save()
