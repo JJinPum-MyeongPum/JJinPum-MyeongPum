@@ -22,13 +22,14 @@
 </div>
 <div class="wrap_value">
     <div class="down">
-        <p>Down</p>
+        <p class="down_">Down</p>
     </div>
-    &nbsp;
+    <p id="count">0</p>
     <div class="up">
-        <p>Up</p>
+        <p class="up_">Up</p>
     </div>
 </div>
+
 <br>
 <hr>
 <Br>
@@ -56,4 +57,25 @@
         </div>
         {% endif %}
     {% endfor %}
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+        if (typeof jQuery == 'undefined') {alert("가치를 매기기 시작합니다!");}
+        else{alert("가치 매기기 오류!");}
+
+    var counter = 0;
+
+    $(".up").click(function(){
+    counter+=10;
+    $("#count").text(counter);
+    });
+
+    $(".down").click(function(){
+    counter-=10;    
+    $("#count").text(counter);
+    });
+
+</script>
+
+
 {% endblock %}
