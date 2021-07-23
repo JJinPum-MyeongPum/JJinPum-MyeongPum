@@ -12,22 +12,22 @@
                 <input  id="search_item" type="text" name="search_word" placeholder="검색어를 입력하세요">
                 <button id="search_button">검색</button>
             </div>
+            <div class="order">
+                <input type="checkbox" name="value[]" id="orderTime" value="11">
+                <label for="orderTime">등록 순 정렬</label>
+                
+                <input type="checkbox" name="value[]" id="orderName" value="12">
+                <label for="orderName">이름 순 정렬</label>
+                
+                <input type="checkbox" name="value[]" id="orderCount" value="13">
+                    <label for="orderCount">인기 순 정렬</label>
+            </div>
     </form>
 
     <hr size="3px">
 
     <h1 class="title"> 측정 중인 찐품명품 </h1>
-    <div class="order">
-        <input type="checkbox" name="value[]" id="orderTime" value="11">
-        <label for="orderTime">등록 순 정렬</label>
-        
-        <input type="checkbox" name="value[]" id="orderName" value="12">
-        <label for="orderName">이름 순 정렬</label>
-        
-        <input type="checkbox" name="value[]" id="orderCount" value="13">
-            <label for="orderCount">인기 순 정렬</label>
-        
-    </div>
+
 
     {% if search_word %}
         <!-- 검색어가 있을 때 -->

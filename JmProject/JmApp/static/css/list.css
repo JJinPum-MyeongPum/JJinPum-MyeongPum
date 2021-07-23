@@ -10,8 +10,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
-
 *{
     font-family: 'S-CoreDream-4Regular';
 }
@@ -26,7 +24,7 @@
     display: flex;
     justify-content: center;
     font-size: 30px;
-    margin-bottom: 1%;
+    margin-top: 2%;
 }
 
 /* 검색 input, button css */
@@ -100,10 +98,14 @@ label[for="orderTime"], [for="orderName"], [for="orderCount"]{
     top: -5.5px;
 }
 
+input[type="checkbox"]:checked + label {
+    background: hsl(202, 100%, 96%);
+}
+
 .order{
     display: flex;
     justify-content: center;
-    margin-top: 1%;
+    margin-top: 2%;
 }
 #orderName, #orderCount{
     font-size: 15px;
