@@ -41,10 +41,10 @@
         {% for product in products %}
           <div class="item">
             <a href="{% url 'detail' product.id %}">
-            <p><img src="{{ product.image.url }}" alt="없음" width="200"></p>
-            <a><strong>{{product.title}}</strong><br>
-            <p>{{product.pub_date}}<br>
-            조회 : {{product.clickCount}}회</p>
+            <p><img src="{{ product.image.url }}" alt="없음" width="230" height="230"></p>
+            <p>{{product.title}}</p><br>
+            <p style="font-size: 13px;">{{product.pub_date}}<br>
+                조회 : {{product.clickCount}}회</p>
             </a>
           </div>
           {% endfor %}
