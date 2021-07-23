@@ -33,6 +33,8 @@
     </div>
 </div>
 
+<!-- 확인버튼 눌러서 해당 페이지 redirect하기 -> counter을 모델의 value값으로 보내기-->
+
 <br>
 <hr>
 <Br>
@@ -63,13 +65,14 @@
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
-        <!--
+        
         if (typeof jQuery == 'undefined')
             alert("가치 매기기 오류!");
-        else
-            alert("물품에 대한 가치 기기 필수 !");
-        -->
-    var counter = 0;
+        else{
+            alert("현재 {{item.title}}의 가치는 <<{{item.value}}>> 입니다.");
+        }
+        
+    var counter=0;
 
     $(".up").click(function(){
     counter+=10;
