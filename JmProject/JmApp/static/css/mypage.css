@@ -7,3 +7,36 @@
 *{
     font-family: 'S-CoreDream-4Regular';
 }
+
+/* 상단 프로필 css */
+.profile{
+    width: 190px;
+    height: 300px;
+    border-radius: 12px;
+    background-color: hsl(202, 100%, 96%);
+    display: block;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+#profileimg{
+    margin-left: 4%;
+    border-radius: 12px;
+}
+#profiletitle{
+    margin-left: 18%;
+    font-size: 25px;
+}
+#profileimg, #profiletitle{
+    padding: 1rem 1rem;
+}
+#nickname{
+    margin-left: 43%;
+    font-size: 15px;
+}
+
+
+/* 사용자 정보 css */
+.info {
+    display: flex;
+    justify-content: center;
+}
