@@ -91,7 +91,7 @@ def search(request):
         products=Item.objects.all().order_by('title')
     if '13' in orderValue:
         products=Item.objects.all().order_by('-clickCount')
-    paginator = Paginator(products, 3)
+    paginator = Paginator(products, 8)
     
     page_number = request.GET.get('page')
     page = paginator.get_page(page_number)
