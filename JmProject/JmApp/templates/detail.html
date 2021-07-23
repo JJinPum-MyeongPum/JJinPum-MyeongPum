@@ -33,4 +33,26 @@
 <hr>
 <Br>
 <!-- 댓글 달기 / 댓글 보기 -->
+    <h3>댓글</h3>
+    {% if user.is_authenticated %}
+        <form action="{% url 'create_comment' item.id %}" method="POST">
+            {% csrf_token %}
+            <p>댓글 작성<textarea name="content" cols="20" row="10"></textarea></p>
+            <button type="submit">작성</button>
+        </form>
+    {% endif %}
+    {% for comment in item.comment_set.all %}
+        <div class="comment_box">
+                <h5>작성자 : {{ comment.writer }}<br>
+                <sub class="comment-date">{{ comment.date }}</sub></h5>
+            <h5><div class="user-comment">{{ comment.content|linebreaksbr }}</div></h5>
+        </div>
+        {% if user == comment.writer %}
+        <div class="comment-delete">
+            <a href="{% url 'delete_comment' item.id comment.id %}">
+                <button class="comment-delete-button">삭제</button>
+            </a>
+        </div>
+        {% endif %}
+    {% endfor %}
 {% endblock %}

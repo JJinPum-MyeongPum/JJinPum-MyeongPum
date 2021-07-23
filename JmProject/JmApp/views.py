@@ -55,7 +55,7 @@ def delete(request,id):
 def create_comment(request, item_id):
     if request.method == 'POST':
         comment=Comment()
-        comment.blog=get_object_or_404(Item, pk=item_id)
+        comment.item=get_object_or_404(Item, pk=item_id)
         comment.writer=request.POST['writer']
         comment.content=request.POST['content']
         comment.save()
@@ -69,9 +69,9 @@ def update_comment(request, item_id, comment_id):
         update_comment.save()
         return redirect('detail', item_id)
     else:
-        blog=get_object_or_404(Item, pk=item_id)
+        item=get_object_or_404(Item, pk=item_id)
         comment=get_object_or_404(Comment, pk=comment_id)
-        return render(request, 'edit_comment.html', {'blog':blog,'comment':comment})
+        return render(request, 'edit_comment.html', {'item':item,'comment':comment})
 
 def delete_comment(request, item_id, comment_id):
     my_comment=Comment.objects.get(pk=comment_id)
