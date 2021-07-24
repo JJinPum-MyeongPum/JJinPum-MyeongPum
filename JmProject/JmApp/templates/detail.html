@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block js %}<script src="{% static 'js/detail.js' %}"></script>{% endblock %}
 {% block title %} detail {% endblock %}
 {% block link %} {% static 'css/detail.css' %}{% endblock %}
 {% block content %}
@@ -21,16 +22,19 @@
 <br>
 <div class="value">
     <p>찐품명품 가치</p>
-    <p>{{item.value}}</p>
+    <p id="countValue">{{item.value}}</p>
 </div>
 <div class="wrap_value">
-    <div class="down">
+    {% csrf_token %}
+    <input type="button" id="down" value="down" name="{{item.id}}">
+    <input type="button" id="up" value="up" name="{{item.id}}">
+    <!-- <div class="down">
         <p class="down_">Down</p>
     </div>
     <p id="count">0</p>
     <div class="up">
         <p class="up_">Up</p>
-    </div>
+    </div> -->
 </div>
 
 <!-- 확인버튼 눌러서 해당 페이지 redirect하기 -> counter을 모델의 value값으로 보내기-->
