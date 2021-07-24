@@ -5,6 +5,10 @@ from JmApp.models import Item
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
+from django.http.response import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+import json
 
 def home(request):
     items=Item.objects.all().order_by('-clickCount')
@@ -13,8 +17,20 @@ def home(request):
 def detail(request, id):
     item=get_object_or_404(Item, pk=id)
     item.clickCount+=1
+    item_id = id
     item.save()
-    return render(request, 'detail.html', {'item':item})
+    if request.method=='POST' and request.is_ajax():
+        try:
+            pk = request.POST.get('pk', None)
+            obj=get_object_or_404(Item, pk=pk)
+            obj.value += int(request.POST.get('value'))
+            obj.save()
+            context = {'count':obj.value}
+            return HttpResponse(json.dumps(context), content_type="application/json")
+        except Item.DoesNotExist:
+            return JsonResponse({'status':'Fail', 'msg': 'Object does not exist'})
+    else:
+        return render(request, 'detail.html', {'item':item, 'item_id':item_id})
 
 def create(request):
     if request.method == "POST":
