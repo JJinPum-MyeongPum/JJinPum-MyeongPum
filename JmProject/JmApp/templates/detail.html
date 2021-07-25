@@ -10,38 +10,29 @@
     <img src="{{item.image.url}}" width="400" height="400">
     </div>
     <div class="box">
-        <p>물품이름 : {{item.title}}</p>
-        <p style="font-size: 10px;">{{item.pub_date}} / {{item.author}}</p><br>
+        <h3>[ {{item.title}} ]</h3>
+        <p style="font-size: 12px; padding-top:2%">{{item.pub_date}} / {{item.author}}</p><br>
         <p>{{item.body}}</p>
     </div>
 </div>
 <br>
 <br>
-<button id="button">좋아요</button>
-<br>
-<br>
-<div class="value">
-    <p>찐품명품 가치</p>
-    <p id="countValue">{{item.value}}</p>
-</div>
+<div style="text-align: center;">
+<h5>찐품명품 가치</h5>
+<p id="countValue">{{item.value}}</p>
 <div class="wrap_value">
     {% csrf_token %}
-    <input type="button" id="down" value="down" name="{{item.id}}">
-    <input type="button" id="up" value="up" name="{{item.id}}">
-    <!-- <div class="down">
-        <p class="down_">Down</p>
-    </div>
-    <p id="count">0</p>
-    <div class="up">
-        <p class="up_">Up</p>
-    </div> -->
+    <button id="down" class="button" value="down" name="{{item.id}}">down</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <button id="up" class="button" value="up" name="{{item.id}}">Up</button>
+</div>
 </div>
 
 <!-- 확인버튼 눌러서 해당 페이지 redirect하기 -> counter을 모델의 value값으로 보내기-->
 
 <br>
 <hr>
-<Br>
+<br>
 <!-- 댓글 달기 / 댓글 보기 -->
     <h5 style="text-align: center;">댓글</h5>
     <br>
