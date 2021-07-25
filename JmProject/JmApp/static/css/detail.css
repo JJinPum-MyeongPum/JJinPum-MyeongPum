@@ -17,51 +17,33 @@
     padding-left: 3%;
     padding-top: 3%;
     width: 300px;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .value{
     text-align: center;
+    justify-content : center;
 }
 
 .wrap_value{
     display: flex;
     justify-content : center;
-    padding-top: 3%;
-}
 
-.down,.up{
-        font-size: 16px;
-        background-color: hsl(202, 100%, 96%);
-        text-decoration: none;
-        border-radius: 20px;
-        padding: 0 2%;
-}
-
-.down > p{
-    text-align: center;
-    padding-top: 30%;
-}
-.up > p{
-    text-align: center;
-    padding-top: 55%;
 }
 
 textarea{
     border-radius: 20px;
 }
 
-#button{
+.button{
     font-family: 'S-CoreDream-4Regular';
     font-size: 20px;
-    margin-top: 3%;
     border: 0;
     outline: 0;
     border-radius: 20px;
-    width: 300px;
+    width: 150px;
     height: 50px;
-    font-size: 20px;
     text-align: center;
-    margin-left: 40%;
+    justify-content : center;
     background-color: hsl(202, 100%, 96%);
 }
