@@ -106,3 +106,25 @@ hr{
     text-decoration: none;
     color: black;
 }
+
+.area{
+    margin: 30px 0 91px;
+    text-align: center;
+}
+
+.btn-u, .btn-d{
+    font-family: 'S-CoreDream-4Regular';
+    font-size: 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    justify-content : center;
+    background-color: hsl(202, 100%, 96%);   
+}
+.btn-u > a, .btn-d > a{
+    text-decoration: none;
+    color: black;
+}
