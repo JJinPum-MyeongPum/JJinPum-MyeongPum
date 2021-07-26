@@ -16,14 +16,14 @@
 }
 .body{
     background-color: hsl(202, 100%, 96%);
-    padding-bottom: 12%;
+    padding-bottom: 15%;
 }
 
 .title{
     font-family: 'S-CoreDream-9Black';
     font-size: 30px;
     display: block;
-    padding-top: 18%;
+    padding-top: 16%;
     padding-left: 18%;
     margin-bottom: 1%;
 }
