@@ -13,6 +13,13 @@
         <h3>[ {{item.title}} ]</h3>
         <p style="font-size: 12px; padding-top:2%">{{item.pub_date}} / {{item.author}}</p><br>
         <p>{{item.body}}</p>
+        {% if user.is_authenticated %}
+
+        <div class="btn_area">
+            <button class="btnpost"><a href="{% url 'edit' item.id %}">수정</a></button>
+        </div>
+
+        {% endif %}
     </div>
 </div>
 <br>
