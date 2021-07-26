@@ -56,9 +56,12 @@
             {% for product in products %}
             <div class="item">
                 <a href="{% url 'detail' product.id %}">
-                <p>{{product.title}}</p><br>
-                <p>{{product.author}}</p><br>
                 <p><img src="{{product.image.url}}" width="230" height="230"></p><br>
+                <p>{{product.title}}</p><br>
+                <p style="font-size: 13px;">{{product.pub_date}}<br>
+                    조회 : {{product.clickCount}}회</p>
+                </a>
+                <!-- <p>{{product.author}}</p><br> -->
                 </a>
             </div>
             {% endfor %}
@@ -70,7 +73,10 @@
 
     <div class="page">
         {% if products.has_previous %}
-        <a href='?page={{products.previous_page_number}}'><</a>
+            <a href='?page={{products.previous_page_number}}'><</a>
+        {% endif %}
+        {% if products.has_next %}
+        <a href="#"></a>
         {% endif %}
     
         {% if search_word == NULL%}
@@ -79,6 +85,9 @@
         <span>{{products.paginator.num_pages}}</span>
         {% endif %}
         
+        {% if products.has_previous %}
+        <a href="#"></a>
+        {% endif %}
         {% if products.has_next %}
         <a href='?page={{products.next_page_number}}'>></a>
         {% endif %}
