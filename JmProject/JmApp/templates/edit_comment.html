@@ -5,4 +5,12 @@
 
 <h1> 댓글 수정 </h1>
 
+<form action="{% url 'update_comment' item.id comment.id %}" method="POST">
+        {% csrf_token %}
+
+        <p> 댓글 작성자 : {{ comment.writer }}</p>
+        <p> 댓글 내용 : <textarea name="content" cols="100" row="300">{{ comment.content }}</textarea></p>        
+        <button type="submit">댓글 수정 완료</button>
+    </form>
+
 {% endblock %}
