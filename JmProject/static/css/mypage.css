@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'S-CoreDream-4Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    font-family: 'S-CoreDream-4Regular';
+}
+
+/* 상단 프로필 css */
+.profile{
+    background-color: hsl(202, 100%, 96%);
+    padding-bottom: 12%;
+    height: 250px;
+    width: 200px;
+    margin-top: 2%;
+    margin-left:10%;
+    /* profile img 위치 조정 */
+    padding-left: 1%;
+    border-radius: 10px;
+}
+.profileimg{
+    display: block;
+    margin-top: 30%;
+}
+#profileimg, #profiletitle{
+    padding: 1rem 1rem;
+}
+#profiletitle{
+    margin-left: 15%;
+    font-size: 25px;
+}
+#nickname{
+    margin-left: 35%;
+    font-size: 15px;
+} 
+
+/* 검색 css */
+.search_title{
+    position: absolute;
+    display: block;
+    left: 530px;
+    top: 100px;
+    font-size: 30px;
+} 
+.search{
+    position: absolute;
+    display: block;
+    margin-top: 1%;
+    left: 630px;
+    top: 170px;
+}
+#search_item{
+    border-radius: 20px;
+    width: 220px;
+}
+#search_button{
+    background-color: hsl(202, 100%, 96%);
+    border: 0;
+    outline: 0;
+    border-radius: 20px;
+    font-size: 18px;
+    width: 65px;
+}
+input:focus{
+    outline: none;
+}
+
+/* count css */
+.count{
+    position: absolute;
+    display: block;
+    left: 590px;
+    top: 320px;
+}
+.count span{
+    font-size: 20px;
+}
+
+/* product list css */
+
+ul, li {
+    list-style: none;
+}
+
+.item{
+    margin-top: 3%;
+}
+
+.list_wrap {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 100px;
+    padding-top: 3%;
+}
+
+.list_wrap ul {
+    font-size: 0;
+}
+
+.list_wrap .item {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    margin-left: 5%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.list_wrap .item:nth-child(-n+3) {
+    margin-top: 0;
+}
+
+.list_wrap .item:nth-child(3n-2) {
+    margin-left: 0;
+}
+
+img{
+    border-radius: 20px 20px 0 0 ;
+}
+
+.list_wrap .item p {
+    display: inline-block;
+    font-size: 15px;
+    letter-spacing: -1px;
+}
+
+.list_wrap .item a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.page{
+    text-decoration: none;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
