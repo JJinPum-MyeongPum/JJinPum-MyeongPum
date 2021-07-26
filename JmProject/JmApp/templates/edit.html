@@ -10,18 +10,25 @@
 {% csrf_token %}
     <div class="signup">
         <div>
-            <p>물건명 : &nbsp;<input class="int" type="text" name="title" style="width: 300px;" placeholder="우리집 보물의 이름을 작성해주세요!" required></p>
+            <p>물건명 : &nbsp;<input class="int" type="text" name="title" style="width: 300px;" value={{item.title}} required></p>
         </div>
         <br>
         <div class="body-div">
             <div class="body">
             <p>설명 : &nbsp;</p>
-                <textarea name="body" cols="36" rows="6" placeholder="당신의 보물을 소개 해주세요!"></textarea>
+                <textarea name="body" cols="36" rows="6">{{item.body}}</textarea>
             </div>
         </div>
         <br>
         <div>
-            <p>물건 이미지 : <input class="int" type="file" name="image" accept="image/*" required></p>
+            <p>물건 이미지 :
+                {% if item.image %}
+                    <img src="{{item.image.url}}" width="200" height="200"> 
+                {% endif %}
+            <br>
+            <!-- 물건 이미지 수정
+                <input class="int" type="file" name="image" accept="image/*"></p>
+            -->
         </div>
     </div>
     <div class="btn_area">
