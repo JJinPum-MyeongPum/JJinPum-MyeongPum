@@ -102,17 +102,7 @@ hr{
     text-align: center;
 }
 
-.btnpost {
-    width: 30%;
-    padding: 21px 0 17px;
-    border: 0;
-    cursor: pointer;
-    background-color: hsl(202, 100%, 96%);
-    font-size: 15px;
-    border-radius: 20px;
-}
-
-.btnpost > a{
+ .button > a{
     text-decoration: none;
     color: black;
 }
