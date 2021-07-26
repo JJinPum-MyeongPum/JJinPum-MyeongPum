@@ -79,12 +79,12 @@ def create_comment(request, item_id, username):
         return redirect('detail', item_id)
 
 def update_comment(request, item_id, comment_id):
-    user=request.user
+    user=request.user.username
     if request.method =='POST':
         update_comment=get_object_or_404(Comment, pk=comment_id)
         update_comment.writer=user
         update_comment.content=request.POST['content']
-        update_comment.itemForeign=item_id
+        # update_comment.itemForeign=item_id
         update_comment.save()
         return redirect('detail', item_id)
     else:
