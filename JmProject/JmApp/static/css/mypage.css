@@ -41,7 +41,7 @@
     position: absolute;
     display: block;
     left: 530px;
-    top: 100px;
+    top: 130px;
     font-size: 30px;
 } 
 .search{
@@ -49,7 +49,7 @@
     display: block;
     margin-top: 1%;
     left: 630px;
-    top: 170px;
+    top: 200px;
 }
 #search_item{
     border-radius: 20px;
