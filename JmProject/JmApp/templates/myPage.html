@@ -16,7 +16,10 @@
 
     <!-- Search -->
     <div>
-        <span class="search_title"><strong>{{user.nickname}}</strong>님이 등록한 찐품명품을 검색해보세요!</span><br>
+        <span class="search_title"><strong> {% if user.nickname %} {{user.nickname}}
+            {% else %} {{user.username}}
+            {% endif %}
+            </strong>님이 등록한 찐품명품을 검색해보세요!</span><br>
         <div class="search">
             <form action="" method="post">
                 {% csrf_token %}
@@ -28,7 +31,11 @@
 
     <!-- products count -->
     <div class="count">
-        <span>{{user.nickname}}님이 등록한 찐품명품 수는</span>
+        <span>
+            {% if user.nickname %} {{user.nickname}}
+            {% else %} {{user.username}}
+            {% endif %}
+            님이 등록한 찐품명품 수는</span>
         <span id="products_count">"{{productsCount}}"개 입니다.</span><br>
     </div>
 </div>
@@ -37,7 +44,7 @@
 
 {% if search_word %}
 <!-- 검색어가 있을 때 -->
-<h3><strong>{{search_word}}</strong>에 대한 검색 결과입니다.</h3>
+<h3><strong> {{user.username}}</strong> <strong>{{search_word}}</strong>에 대한 검색 결과입니다.</h3>
 {% else %}
 <!-- <h3>검색어를 입력하세요.</h3> -->
 {% endif%}
@@ -45,7 +52,7 @@
 
 <div class="list_wrap">
     <ul>
-        {% if products != Null %}
+        {% if products != NULL %}
             {% for product in products %}
             <div class="item">
                 <a href="{% url 'detail' product.id %}">
