@@ -125,4 +125,15 @@ def mypage(request, username):
     if products is None:
         productsCount = 0
     else: productsCount = len(products)
+
+    paginator = Paginator(products, 6)
+    
+    page_number = request.GET.get('page')
+    page = paginator.get_page(page_number)
+    search_word = request.POST.get('search_word')
+
+    if search_word:
+        products = products.filter(title__icontains = search_word)
+        return render(request, 'productList.html', {'products':products, 'search_word':search_word})
+    # return render(request, 'productList.html', {'products':page, 'search_word':search_word})
     return render(request, 'myPage.html', {'products':products, 'users':user, 'productsCount':productsCount})
