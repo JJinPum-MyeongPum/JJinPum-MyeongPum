@@ -39,23 +39,22 @@
     {% if user.is_authenticated %}
         <form action="{% url 'create_comment' item.id user.username %}" method="POST" style="text-align: center;">
             {% csrf_token %}
-            <textarea name="content" cols="100" row="30"></textarea>
-            <button type="submit" style="border-radius: 20px; background-color: hsl(202, 100%, 96%);">작성</button>
+        <div class="btn">
+            <textarea name="content" cols="100" rows="3"></textarea> &nbsp;&nbsp;
+            <button class="comment-btn" style="border-radius: 20px; background-color: hsl(202, 100%, 96%);">작성</button>
+        </div>
         </form>
     {% endif %}
     {% for comment in item.comment_set.all %}
-        <div class="comment_box">
-                <h5>작성자 : {{ comment.writer }}<br>
-                <sub class="comment-date">{{ comment.date }}</sub></h5>
+            <div class="comment-user" style="display: flex;">
+                <h5>작성자 : {{ comment.writer }}
+            {% if user.is_authenticated %}
+                {% if user.username == comment.writer %}
+                    <button class="comment-delete-button"><a href="{% url 'delete_comment' item.id comment.id %}">삭제</a></button>
+                {% endif %}
+            {% endif %}
+            </div>
             <h5><div class="user-comment">{{ comment.content|linebreaksbr }}</div></h5>
-        </div>
-        {% if user == comment.writer %}
-        <div class="comment-delete">
-            <a href="{% url 'delete_comment' item.id comment.id %}">
-                <button class="comment-delete-button">삭제</button>
-            </a>
-        </div>
-        {% endif %}
     {% endfor %}
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
