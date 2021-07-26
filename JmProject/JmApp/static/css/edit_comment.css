@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'S-CoreDream-4Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: 'S-CoreDream-4Regular';
+}
+
+.btn_area {
+    margin: 30px 0 91px;
+    text-align: center;
+}
+
+.btnpost {
+    width: 30%;
+    padding: 21px 0 17px;
+    border: 0;
+    cursor: pointer;
+    background-color: hsl(202, 100%, 96%);
+    font-size: 15px;
+    border-radius: 20px;
+}

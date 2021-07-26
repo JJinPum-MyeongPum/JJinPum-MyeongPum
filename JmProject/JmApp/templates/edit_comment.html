@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} edit comment {% endblock %}
+{% block link %} {% static 'css/edit_comment.css' %}{% endblock %}
 {% block content %}
-
-<h1> 댓글 수정 </h1>
 
 <form action="{% url 'update_comment' item.id comment.id %}" method="POST">
         {% csrf_token %}
-
-        <p> 댓글 작성자 : {{ comment.writer }}</p>
-        <p> 댓글 내용 : <textarea name="content" cols="100" row="300">{{ comment.content }}</textarea></p>        
-        <button type="submit">댓글 수정 완료</button>
+    <div style="text-align:center; padding-top:3%">
+        <h5>댓글을 수정해주세요!</h5>
+        <br>
+        <p><textarea name="content" cols="100" rows="5" style="resize: none; border-radius:20px">{{ comment.content }}</textarea></p>        
+        <div class="btn_area">
+            <button class="btnpost" type="submit">댓글 수정</button>
+        </div>    
+    </div>
     </form>
 
 {% endblock %}
