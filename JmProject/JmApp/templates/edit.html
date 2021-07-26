@@ -6,7 +6,7 @@
 
 <h2 class="signup-title">수정 후, 저장해주세요!</h2>
 <br>
-<form method="POST" action="{% url 'edit' %}" enctype="multipart/form-data">
+<form method="POST" action="{% url 'edit' item.id %}" enctype="multipart/form-data">
 {% csrf_token %}
     <div class="signup">
         <div>
