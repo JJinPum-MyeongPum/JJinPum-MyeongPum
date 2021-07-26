@@ -78,7 +78,8 @@ def create_comment(request, item_id, username):
         comment.save()
         return redirect('detail', item_id)
 
-def update_comment(request, item_id, comment_id, user):
+def update_comment(request, item_id, comment_id):
+    user=request.user
     if request.method =='POST':
         update_comment=get_object_or_404(Comment, pk=comment_id)
         update_comment.writer=user
