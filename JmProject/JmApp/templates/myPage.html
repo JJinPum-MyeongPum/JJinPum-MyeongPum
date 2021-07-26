@@ -7,7 +7,9 @@
 <!-- Profile -->
 <div class="profile">
     <div>
+        {% if user.profileImg %}
         <img src="{{user.profileImg.url}}" id="profileimg" width="170">
+        {% endif %}
         <span id="profiletitle"><strong>{{user.username}}</strong></span><br>
         <span id="nickname">{{user.nickname}}</span>
     </div>
