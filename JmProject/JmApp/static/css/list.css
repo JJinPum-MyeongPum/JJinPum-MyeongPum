@@ -107,7 +107,7 @@ input[type="checkbox"]:checked + label {
     justify-content: center;
     margin-top: 2%;
 }
-#orderName, #orderCount{
+#orderName, #orderCount, #orderValues{
     font-size: 15px;
     margin-left: 2%;
     vertical-align: middle;
