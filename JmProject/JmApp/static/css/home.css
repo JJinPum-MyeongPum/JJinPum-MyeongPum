@@ -60,10 +60,10 @@
 /* image css */
 #image{
     position: absolute;
-    display: block;
+    display: flex;
     right: 130px;
     top: 150px;
-    border-radius: 25%;
+    border-radius: 20px;
 }
 
 /* 인기 보물 css */
@@ -130,4 +130,8 @@ img{
 a{
     text-decoration: none;
     color: black;
+}
+.page{
+    text-decoration: none;
+    text-align: center;
 }
