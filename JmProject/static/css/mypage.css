@@ -11,30 +11,38 @@
 /* 상단 프로필 css */
 .profile{
     background-color: hsl(202, 100%, 96%);
-    padding-bottom: 12%;
+    padding-bottom: 14%;
     height: 250px;
-    width: 200px;
+    width: 230px;
     margin-top: 2%;
     margin-left:10%;
     /* profile img 위치 조정 */
-    padding-left: 1%;
+    padding-left: 1.5%;
     border-radius: 10px;
 }
-.profileimg{
+#profileimg{
     display: block;
-    margin-top: 30%;
+    margin-top: 10%;
+    border-radius: 50px;
 }
-#profileimg, #profiletitle{
+#profileimg{
     padding: 1rem 1rem;
 }
 #profiletitle{
-    margin-left: 15%;
     font-size: 25px;
 }
 #nickname{
-    margin-left: 35%;
     font-size: 15px;
-} 
+    margin-top: -20%;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    text-align: center;
+    margin-right: 20%;
+}
 
 /* 검색 css */
 .search_title{
