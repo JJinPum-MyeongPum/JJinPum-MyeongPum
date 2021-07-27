@@ -1,3 +1,4 @@
+from django.core import paginator
 from django.shortcuts import render
 from account.models import User
 from django.utils import timezone
@@ -12,6 +13,9 @@ import json
 
 def home(request):
     items=Item.objects.all().order_by('-clickCount')
+    paginator = Paginator(items, 3)
+    page = request.GET.get('page')
+    items = paginator.get_page(page)
     return render(request, 'home.html', {'items':items})
 
 def detail(request, id):

@@ -33,6 +33,25 @@
           </div>
           {% endfor %}
         </ul>
+        <div class="page">
+            {% if items.has_previous %}
+                <a href="?page={{items.previous_page_number}}"><</a>
+            {% endif %}
+              {% if items.has_next %}
+              <a href="#"></a>
+              {% endif %}
+              
+              <span>{{items.number}}</span>
+              <span>of</span>
+              <span>{{items.paginator.num_pages}}</span>
+              
+              {% if items.has_previous %}
+              <a href="#"></a>
+              {% endif %}
+              {% if items.has_next %}
+              <a href="?page={{ items.next_page_number}}">></a>
+              {% endif %}
+              </div>
         </div>
 
 {% endblock %}
