@@ -15,10 +15,6 @@ def home(request):
     return render(request, 'home.html', {'items':items})
 
 def detail(request, id):
-    item=get_object_or_404(Item, pk=id)
-    item.clickCount+=1
-    item_id = id
-    item.save()
     if request.method=='POST' and request.is_ajax():
         try:
             pk = request.POST.get('pk', None)
@@ -30,6 +26,10 @@ def detail(request, id):
         except Item.DoesNotExist:
             return JsonResponse({'status':'Fail', 'msg': 'Object does not exist'})
     else:
+        item=get_object_or_404(Item, pk=id)
+        item.clickCount+=1
+        item_id = id
+        item.save()
         return render(request, 'detail.html', {'item':item, 'item_id':item_id})
 
 def create(request):
