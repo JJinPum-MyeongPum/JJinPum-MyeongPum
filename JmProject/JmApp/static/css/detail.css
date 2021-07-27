@@ -38,6 +38,10 @@ textarea{
     border-radius: 20px;
 }
 
+textarea:focus{
+    outline: none;
+}
+
 .button{
     font-family: 'S-CoreDream-4Regular';
     font-size: 20px;
