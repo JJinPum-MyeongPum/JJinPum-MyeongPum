@@ -25,7 +25,7 @@
         {% for item in items %}
           <div class="item">
             <a href="{% url 'detail' item.id %}">
-            <p><img src="{{ item.image.url }}" alt="없음" width="230" height="230"></p>
+            <p><img class="img" src="{{ item.image.url }}" alt="없음" width="230" height="230"></p>
             <p>{{item.title}}</p><br>
             <p style="font-size: 13px;">{{item.pub_date}}<br>
                 조회 : {{item.clickCount}}회</p>
