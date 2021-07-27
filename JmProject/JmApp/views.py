@@ -130,7 +130,7 @@ def mypage(request, username):
         productsCount = 0
     else: productsCount = len(products)
 
-    paginator = Paginator(products, 6)
+    paginator = Paginator(products, 3)
     
     page_number = request.GET.get('page')
     page = paginator.get_page(page_number)
