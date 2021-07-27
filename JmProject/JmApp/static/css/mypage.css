@@ -81,6 +81,9 @@ input:focus{
     display: block;
     left: 590px;
     top: 320px;
+    text-align: center;
+    justify-content: center;
+    padding-left: 5%;
 }
 .count span{
     font-size: 20px;
@@ -148,3 +151,4 @@ a{
     text-decoration: none;
     color: black;
 }
+
