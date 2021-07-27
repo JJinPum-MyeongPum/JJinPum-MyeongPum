@@ -7,11 +7,16 @@
 <!-- Profile -->
 <div class="profile">
     <div>
-        {% if user.profileImg %}
-        <img src="{{user.profileImg.url}}" id="profileimg" width="170">
-        {% endif %}
-        <span id="profiletitle"><strong>{{user.username}}</strong></span><br>
-        <span id="nickname">{{user.nickname}}</span>
+        <div class="img">
+            {% if user.profileImg %}
+            <img src="{{user.profileImg.url}}" id="profileimg" width="180" height="180">
+            {% endif %}
+        </div>
+        <div class="text">
+            <p id="profiletitle"><strong>{{user.username}}</strong></p><br>
+            <p id="nickname">{{user.nickname}}</p>
+        </div>
+
     </div>
 
     <!-- Search -->
