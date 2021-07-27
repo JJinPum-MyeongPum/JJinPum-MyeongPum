@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} My Page {% endblock %}
+{% block link %} {% static 'css/mypage.css' %}{% endblock %}
+{% block content %}
+
+<!-- Profile -->
+<div class="profile">
+    <div>
+        <div class="img">
+            {% if user.profileImg %}
+            <img src="{{user.profileImg.url}}" id="profileimg" width="180" height="180">
+            {% endif %}
+        </div>
+        <div class="text">
+            <p id="profiletitle"><strong>{{user.username}}</strong></p><br>
+            <p id="nickname">{{user.nickname}}</p>
+        </div>
+
+    </div>
+
+    <!-- Search -->
+    <div>
+        <span class="search_title"><strong> {% if user.nickname %} {{user.nickname}}
+            {% else %} {{user.username}}
+            {% endif %}
+            </strong>님이 등록한 찐품명품을 검색해보세요!</span><br>
+        <div class="search">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="text" id="search_item" name="search_word" placeholder="검색어를 입력하세요">
+                <button id="search_button">검색</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- products count -->
+    <div class="count">
+        <span>
+            {% if search_word %}
+            <!-- 검색어가 있을 때 -->
+            <span class="search_result"><strong>{{search_word}}</strong>에 대한 검색 결과입니다.</span>
+            {% else %}
+            <!-- <span>검색어를 입력하세요.</span> -->
+            {% endif%}
+    </div>
+</div>
+
+
+
+
+<div class="list_wrap">
+    <ul>
+        {% if products != NULL %}
+            {% for product in products %}
+            <div class="item">
+                <a href="{% url 'detail' product.id %}">
+                <p><img src="{{product.image.url}}" width="230" height="230"></p><br>
+                <p>{{product.title}}</p><br>
+                <p style="font-size: 13px;">{{product.pub_date}}<br>
+                    조회 : {{product.clickCount}}회</p>
+                </a>
+                </a>
+            </div>
+            {% endfor %}
+        {% else %}
+        {{ids}}에 대한 기록이 없습니다.
+        {% endif %}
+    </ul>
+
+</div>
+
+{% endblock %}
+

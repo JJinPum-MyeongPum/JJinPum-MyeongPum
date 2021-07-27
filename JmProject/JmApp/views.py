@@ -140,6 +140,9 @@ def mypage(request, username):
 
     if search_word:
         products = products.filter(title__icontains = search_word)
-        return render(request, 'productList.html', {'products':products, 'search_word':search_word})
+        return render(request, 'search_mypage.html', {'products':products, 'search_word':search_word})
     # return render(request, 'productList.html', {'products':page, 'search_word':search_word})
     return render(request, 'myPage.html', {'products':products, 'users':user, 'productsCount':productsCount})
+
+def search_mypage(request):
+    return render(request, search_mypage.html)
