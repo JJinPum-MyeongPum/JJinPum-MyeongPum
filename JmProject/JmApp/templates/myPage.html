@@ -45,8 +45,6 @@
     </div>
 </div>
 
-
-
 {% if search_word %}
 <!-- 검색어가 있을 때 -->
 <h3><strong> {{user.username}}</strong> <strong>{{search_word}}</strong>에 대한 검색 결과입니다.</h3>
@@ -66,7 +64,6 @@
                 <p style="font-size: 13px;">{{product.pub_date}}<br>
                     조회 : {{product.clickCount}}회</p>
                 </a>
-                <!-- <p>{{product.author}}</p><br> -->
                 </a>
             </div>
             {% endfor %}
@@ -75,28 +72,6 @@
         {% endif %}
     </ul>
 
-
-    <div class="page">
-        {% if products.has_previous %}
-            <a href='?page={{products.previous_page_number}}'><</a>
-        {% endif %}
-        {% if products.has_next %}
-        <a href="#"></a>
-        {% endif %}
-    
-        {% if search_word == NULL%}
-        <span>{{products.number}}</span>
-        <span>of</span>
-        <span>{{products.paginator.num_pages}}</span>
-        {% endif %}
-        
-        {% if products.has_previous %}
-        <a href="#"></a>
-        {% endif %}
-        {% if products.has_next %}
-        <a href='?page={{products.next_page_number}}'>></a>
-        {% endif %}
-    </div>
 </div>
 
 {% endblock %}
