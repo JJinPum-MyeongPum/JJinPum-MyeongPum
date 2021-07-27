@@ -14,16 +14,19 @@
         <p style="font-size: 12px; padding-top:2%">{{item.pub_date}} / {{item.author}}</p><br>
         <p>{{item.body}}</p>
         {% if user.is_authenticated %}
+        {% if user == item.author %}
         <div style="display: flex; text-align:center;" >
-        <div class="area">
+            <div class="area">
+        
             <button  class="btn-u"><a href="{% url 'edit' item.id %}">수정</a></button>
         </div>
         &nbsp;
         <div class="area">
             <button class="btn-d"><a href="{% url 'delete' item.id %}">삭제</a></button>
         </div>
-        </div>
-        {% endif %}
+    </div>
+    {% endif %}
+    {% endif %}
     </div>
 </div>
 <br>
