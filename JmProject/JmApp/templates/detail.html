@@ -73,28 +73,4 @@
             <div class="user-comment"><p>{{ comment.content|linebreaksbr }}</p></div>
             <hr>
             {% endfor %}
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript">
-        
-        if (typeof jQuery == 'undefined')
-            alert("가치 매기기 오류!");
-        else{
-            alert("현재 {{item.title}}의 가치는 <<{{item.value}}>> 입니다.");
-        }
-        
-    var counter=0;
-
-    $(".up").click(function(){
-    counter+=10;
-    $("#count").text(counter);
-    });
-
-    $(".down").click(function(){
-    counter-=10;    
-    $("#count").text(counter);
-    });
-
-</script>
-
-
 {% endblock %}
