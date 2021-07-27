@@ -71,3 +71,11 @@ input:focus{
 #signup:visited{
     color: #000;
 }
+
+#error{
+    font-size: 15px;
+    position: absolute;
+    display: block;
+    right: 640px;
+    top: 305px;
+}
