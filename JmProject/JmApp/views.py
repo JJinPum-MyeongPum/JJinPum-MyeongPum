@@ -145,4 +145,4 @@ def mypage(request, username):
     return render(request, 'myPage.html', {'products':products, 'users':user, 'productsCount':productsCount})
 
 def search_mypage(request):
-    return render(request, search_mypage.html)
+    return render(request, 'search_mypage.html')

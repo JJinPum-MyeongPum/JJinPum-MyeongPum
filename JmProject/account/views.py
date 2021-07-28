@@ -35,4 +35,29 @@ def signup(request):
         return redirect('home')
     else : 
         return render(request,'signup.html')
-# Create your views here.
+
+
+# 회원정보 수정
+def user_edit(request):
+     # 먼저 로그인 필요
+    '''
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(username = username, password = password)
+        
+        if user is not  None:
+            login(request, user)
+            return redirect('home')
+        else:
+            return render(request, 'user_edit.html', {'error': '아이디와 비밀번호가 일치하지 않습니다.'})
+    '''
+    # 로그인 성공시
+    if request.method=="POST":
+        edit_info=User.objects.get()
+        edit_info.nickname=request.POST['nickname']
+        edit_info.profileImg=request.FILES.get('profileImg')
+        edit_info.save()
+        return redirect('home')
+    else:
+        return render(request, 'edit_myinfo.html')
