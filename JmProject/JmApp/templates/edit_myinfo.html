@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} edit myInfo {% endblock %}
+{% block link %} {% endblock %}
+{% block content %}
+
+<h1> 회원정보 수정 페이지 </h1>
+
+<form method="POST" action="{% url 'user_edit' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- wrapper -->
+    <div id="wrapper">
+
+        <!-- content-->
+        <div id="content">
+
+            <!-- NICKNAME -->
+            <div>
+                <h3 class="join_title"><label for="nickname">별명</label></h3>
+                <span class="box int_name">
+                    <input class="int" type="text" name="nickname" value={{user.nickname}}><br>
+                </span>
+            </div>
+
+            <!-- profileImg -->
+            <div>
+                <h3 class="join_title"><label for="nickname">프로필이미지</label></h3>
+               {% if user.profileImg %}
+                <img class="img" src="{{user.profileImg.url}}" id="profileimg" width="150">
+                {% endif %}
+                <br>
+                <span class="box int_img">
+                    <input class="int" type="file" name="profileImg" accept="image/*"  maxlength="20">
+                </span>
+            </div>
+
+            <!-- JOIN BTN-->
+            <div class="btn_area">
+                <button id="btnJoin">
+                    정보 수정
+                </button>
+                <!-- <p style="text-align: center;">이미 아이디가 있으신가요?<a href="{% url 'login' %}" style="color:black;">로그인</a></p> -->
+            </div>
+        </div> 
+    </div> 
+</form>
+
+
+{% endblock %}
