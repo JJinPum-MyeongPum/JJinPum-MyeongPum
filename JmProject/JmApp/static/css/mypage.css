@@ -12,7 +12,7 @@
 .profile{
     background-color: hsl(202, 100%, 96%);
     padding-bottom: 14%;
-    height: 250px;
+    height: 255px;
     width: 230px;
     margin-top: 2%;
     margin-left:10%;
@@ -20,6 +20,7 @@
     padding-left: 1.5%;
     border-radius: 10px;
 }
+
 #profileimg{
     display: block;
     margin-top: 10%;
@@ -79,8 +80,10 @@ input:focus{
 .count{
     position: absolute;
     display: block;
-    left: 590px;
+    left: 550px;
     top: 320px;
+    text-align: center;
+    justify-content: center;
 }
 .count span{
     font-size: 20px;
@@ -124,7 +127,7 @@ ul, li {
     margin-left: 0;
 }
 
-img{
+.img{
     border-radius: 20px 20px 0 0 ;
 }
 
@@ -148,3 +151,4 @@ a{
     text-decoration: none;
     color: black;
 }
+
