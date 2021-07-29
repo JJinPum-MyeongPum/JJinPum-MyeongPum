@@ -18,7 +18,7 @@
 <br>
 
 ## 📃UML
-[추가예정]
+![JJin](https://user-images.githubusercontent.com/65885185/127511861-1292003b-9e0a-41d2-9cd9-17511166ea9c.png)
 
 <br>
 
