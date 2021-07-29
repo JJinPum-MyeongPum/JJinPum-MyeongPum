@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .models import User
 from django.contrib import auth
-
+# from django.contrib.auth.models import User
 
 def user_login(request):
     if request.method == "POST":
@@ -54,9 +54,11 @@ def user_edit(request):
     '''
     # 로그인 성공시
     if request.method=="POST":
-        edit_info=User.objects.get()
+        id=request.user.id
+        edit_info=User.objects.get(pk=id)
         edit_info.nickname=request.POST['nickname']
-        edit_info.profileImg=request.FILES.get('profileImg')
+        if request.FILES.get('profileImg'):
+            edit_info.profileImg=request.FILES.get('profileImg')
         edit_info.save()
         return redirect('home')
     else:
