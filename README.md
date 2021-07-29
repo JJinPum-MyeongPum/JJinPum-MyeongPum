@@ -23,7 +23,11 @@
 <br>
 
 ## 💻DEMO💻
-사진 추가 예정
+![메인홈](https://user-images.githubusercontent.com/80839715/127511703-4498e167-ed42-45d9-8aec-1888cd28d983.PNG)
+![메인홈 2](https://user-images.githubusercontent.com/80839715/127511732-c11bddb1-87c4-4b11-8827-66121d311314.PNG)
+![리스트1](https://user-images.githubusercontent.com/80839715/127511816-260c10eb-e0a3-41f8-b626-e69e3f70fc0d.PNG)
+![디테일1](https://user-images.githubusercontent.com/80839715/127512082-9e92e63c-0bd6-4529-a282-88ddca811153.PNG)
+![디테일2](https://user-images.githubusercontent.com/80839715/127511856-0235266a-7e7c-4245-98f8-de7029c83bb1.PNG)
 
 <br>
 
