@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django,venv
 
 ### SECRET KEY ###
-secret.json
+secrets.json
 
 ### Django ###
 *.log
