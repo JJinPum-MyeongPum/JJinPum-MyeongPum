@@ -1,6 +1,6 @@
-<br>
+# 💍 [찐품명품] 장고 웹사이트
 
-### 🦁멋쟁이사자처럼 at SCH 9th🦁 에서 자체적으로 개최한 [무쓸모톤] 프로젝트
+## 🦁멋쟁이사자처럼 at SCH 9th🦁 에서 자체적으로 개최한 [무쓸모톤] 프로젝트
 
 <br>
 
@@ -15,7 +15,7 @@
 <br>
 
 ## ✨찐품명품
-우리 집 쓸모없는 물건들을 자랑하고 가치를 측정하는 웹 사이트
+우리 집 찐보물(~~쓸모없는~~ 물건)💍들을 자랑하고 가치를 측정하는 웹 사이트
 
 <br>
 
@@ -59,14 +59,17 @@ BACK-END
 2. Django 설치
 - `pip install django`
 
-3. 모델 생성/DB 작업 파일 및 테이블 생성 
+3. PIL(Python Image Library) 설치
+- `pip install pillow`
+
+4. 모델 생성/DB 작업 파일 및 테이블 생성 
 - `python manage.py makemigrations`
 - `python manage.py migrate`
 
-4. (옵션) admin 관리자 계정(supersuer) 생성
+5. admin 관리자 계정(superuser) 생성
 - `python manage.py createsuperuser` 
 
-5. 서버 실행
+6. 서버 실행
 - `python manage.py runserver`
 
 <br>
