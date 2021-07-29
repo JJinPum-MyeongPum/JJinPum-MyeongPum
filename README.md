@@ -1,4 +1,11 @@
+<br>
+
 ### 🦁멋쟁이사자처럼 at SCH 9th🦁 에서 자체적으로 개최한 [무쓸모톤] 프로젝트
+
+<br>
+
+### 📑프로젝트 노션
+ https://melted-stamp-adc.notion.site/at-SCH-ebd3dfdf2c244e6ba9bf11c73362cc0a
 
 <br>
 
