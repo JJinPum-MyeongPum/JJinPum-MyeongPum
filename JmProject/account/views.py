@@ -51,6 +51,8 @@ def user_edit(request):
             return redirect('home')
         else:
             return render(request, 'user_edit.html', {'error': '아이디와 비밀번호가 일치하지 않습니다.'})
+    else:
+        return render(request, 'login.html')
     '''
     # 로그인 성공시
     if request.method=="POST":

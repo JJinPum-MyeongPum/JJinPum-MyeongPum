@@ -51,14 +51,22 @@ BACK-END
 <br>
 
 ## 🖥프로젝트 실행법🖥
+
 1. 가상환경 생성 및 실행
 - `python -m venv (가상환경 이름)`
-- `(가상환경 이름)/Scripts/activate`
+- `source (가상환경 이름)/Scripts/activate` (for Windows) / `source (가상환경이름)/bin/activate` (for OS X/Linux)
 
 2. Django 설치
 - `pip install django`
 
-3. 서버 실행
+3. 모델 생성/DB 작업 파일 및 테이블 생성 
+- `python manage.py makemigrations`
+- `python manage.py migrate`
+
+4. (옵션) admin 관리자 계정(supersuer) 생성
+- `python manage.py createsuperuser` 
+
+5. 서버 실행
 - `python manage.py runserver`
 
 <br>
