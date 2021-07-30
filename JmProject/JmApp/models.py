@@ -9,7 +9,7 @@ class Item(models.Model):
     author = models.ForeignKey('account.User', on_delete=models.CASCADE)
     pub_date = models.DateTimeField()
     body = models.TextField(default='')
-    image = models.ImageField(upload_to="JmApp/", blank=True, null=True)
+    image = models.ImageField( blank=True, null=True)
     value = models.IntegerField(default=0)
     clickCount = models.IntegerField(default=0)
 
