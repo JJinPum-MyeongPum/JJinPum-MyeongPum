@@ -14,9 +14,18 @@
             <input type="password" id="password" name="password" placeholder="비밀번호"><br>
         </div>
     </div>
-
-    <button id="button">로그인</button><br>
-    <a id="signup" href="{% url 'signup' %}">회원가입</a>
+    <!-- wrapper -->
+    <div id="wrapper">
+        <!-- content-->
+        <div id="content">
+                <!-- JOIN BTN-->
+                <div class="btn_area">
+                    <button id="btnJoin">
+                        로그인
+                    </button>
+                </div>
+            </div> 
+        </div> 
     <p id="error">{{error}}</p>
 </form>
 {% endblock %}
