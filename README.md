@@ -9,7 +9,7 @@
 <br>
 
 ## ⏱프로젝트 기간
-2021.07.16 ~ 2021.07.30
+2021.07.16 ~ 2021.07.30(14일)
 
 <br>
 
@@ -41,7 +41,7 @@
 
 FRONT-END
 - 컴퓨터공학과 [최연희](https://github.com/yyeonhee)
-- 사물인터넷학과 [송지영](https://github.com/Zy0ung)
+- 사물인터넷학과 [송지영](https://github.com/Zy0ung) - 팀장
 
 BACK-END
 - 의료IT공학과 [성현](https://github.com/dvlops87)
