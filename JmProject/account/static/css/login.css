@@ -79,3 +79,30 @@ input:focus{
     right: 640px;
     top: 305px;
 }
+
+#wrapper {
+    position: relative;
+    height: 100%;
+}
+#content {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 300px;
+}
+
+.btn_area {
+    margin: 30px 0 91px;
+}
+
+#btnJoin {
+    width: 100%;
+    padding: 21px 0 17px;
+    border: 0;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: hsl(202, 100%, 96%);
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 20px;
+}
