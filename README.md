@@ -2,6 +2,8 @@
 🦁멋쟁이사자처럼 at SCH 9th🦁 에서 자체적으로 개최한 [무쓸모톤] 프로젝트
 <br>
 
+![KakaoTalk_20210801_111506313](https://user-images.githubusercontent.com/65885185/127756945-ccafe459-ee12-411b-a848-1b90c14ff9b5.png)
+
 ### 🖥 찐품명품 사이트
 
  http://hyun1011.pythonanywhere.com
