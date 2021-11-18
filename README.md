@@ -4,8 +4,7 @@
 
 ![KakaoTalk_20210801_111506313](https://user-images.githubusercontent.com/65885185/127756945-ccafe459-ee12-411b-a848-1b90c14ff9b5.png)
 
-### 🖥 찐품명품 사용 영상
-####클릭 시 튜브로 이동
+### 🖥 찐품명품 사용 영상 (클릭 시 튜브로 이동)
 [![Video Label](https://user-images.githubusercontent.com/65885185/142373918-b36249d8-9e45-4b3f-8754-50bfd8f8b1c4.png)](https://youtu.be/qo1E62K7LM0)
 <br>
 
