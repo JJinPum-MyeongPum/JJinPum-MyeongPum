@@ -5,7 +5,7 @@
 ![KakaoTalk_20210801_111506313](https://user-images.githubusercontent.com/65885185/127756945-ccafe459-ee12-411b-a848-1b90c14ff9b5.png)
 
 ### 🖥 찐품명품 사용 영상
-
+{% include README.md id="https://youtu.be/qo1E62K7LM0" %}  
 ![youtube](https://youtu.be/qo1E62K7LM0)
 <iframe width="640" height="360" src="https://youtu.be/qo1E62K7LM0" frameborder="0" gesture="media" allowfullscreen=""></iframe>
 <br>
