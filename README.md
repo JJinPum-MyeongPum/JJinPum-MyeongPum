@@ -6,6 +6,7 @@
 
 ### 🖥 찐품명품 사용 영상
 
+![youtube](https://youtu.be/qo1E62K7LM0)
 <iframe width="640" height="360" src="https://youtu.be/qo1E62K7LM0" frameborder="0" gesture="media" allowfullscreen=""></iframe>
 <br>
 
